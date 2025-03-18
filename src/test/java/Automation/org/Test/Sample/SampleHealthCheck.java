@@ -20,7 +20,7 @@ public class SampleHealthCheck {
         Assert.assertTrue(true);
     }
 
-    @Description("TC-1 Verify Booking ID")
+    @Description("TC-2 Verify Booking ID")
     @Owner("Shubham")
     @Test(groups = "qa",priority = 2)
     public void verifyBookingID(){
@@ -28,7 +28,7 @@ public class SampleHealthCheck {
         Assert.assertTrue(true);
     }
 
-    @Description("TC-1 Update Booking ID")
+    @Description("TC-3 Update Booking ID")
     @Owner("Shubham")
     @Test(groups = "qa",priority = 3)
     public void updateBookingID(){
@@ -36,7 +36,7 @@ public class SampleHealthCheck {
         Assert.assertTrue(true);
     }
 
-    @Description("TC-1 Delete Booking")
+    @Description("TC-4 Delete Booking")
     @Owner("Shubham")
     @Test(groups = "qa",priority = 4)
     public void deleteBooking(){

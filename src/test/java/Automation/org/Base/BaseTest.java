@@ -14,11 +14,11 @@ import io.restassured.specification.RequestSpecification;
 import org.testng.annotations.BeforeTest;
 
 public class BaseTest {
-    RequestSpecification requestSpecification;
-    Response response;
-    ValidatableResponse validatableResponse;
-    PayloadManager payloadManager;
-    AssertionsActions assertionsActions;
+    public RequestSpecification requestSpecification;
+    public Response response;
+    public ValidatableResponse validatableResponse;
+    public PayloadManager payloadManager;
+    public AssertionsActions assertionsActions;
 
 
     @BeforeTest

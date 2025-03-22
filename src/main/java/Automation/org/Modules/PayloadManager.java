@@ -4,19 +4,14 @@ import Automation.org.Pojos.Booking;
 import Automation.org.Pojos.BookingResponse;
 import Automation.org.Pojos.Bookingdates;
 import com.google.gson.Gson;
-import io.qameta.allure.testng.TestInstanceParameter;
 
 public class PayloadManager {
 
     // Convert the Java objects to JSON or vice versa
     // Serialization and De-serialization
 
-    Gson gson;
-    String stringPayloadBooking;
-    BookingResponse bookingResponse;
-
     // Serialization
-    public String createPayloadBookingAsString(){
+    public static String createPayloadBookingAsString(){
 
         Booking booking =new Booking();
         booking.setFirstname("Shubham");
@@ -32,8 +27,8 @@ public class PayloadManager {
         booking.setBookingdates(bd);
 
         // Java Object to JSON
-        gson=new Gson();
-        stringPayloadBooking = gson.toJson(booking);
+        Gson gson=new Gson();
+        String stringPayloadBooking = gson.toJson(booking);
 
     return stringPayloadBooking;
     }
@@ -41,8 +36,8 @@ public class PayloadManager {
     // De-serialization --->> JSON to Java Object
     public BookingResponse getJavaObjectResponse(String response){
 
-        gson=new Gson();
-        bookingResponse=gson.fromJson(response, BookingResponse.class);
+        Gson gson=new Gson();
+        BookingResponse bookingResponse=gson.fromJson(response, BookingResponse.class);
         return  bookingResponse;
     }
 }

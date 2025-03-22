@@ -13,7 +13,7 @@ public class TestCreateAuth extends BaseTest {
 
 
     @Owner("Shubham SDET")
-    @Test(groups = "Reg", priority = 2)
+    @Test(groups = "Regression", priority = 2,invocationCount = 5)
     @Description("TC-1---->>>> Create Auth Token")
     public void test_createAuth() {
 

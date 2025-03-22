@@ -25,4 +25,8 @@ public class AssertionsActions {
         assertThat(keyActual).isEqualTo(keyExpect);
     }
 
+    public void verifyStringKeyNotNull(String keyExpect) {
+        assertThat(keyExpect).isNotNull();
+    }
+
 }

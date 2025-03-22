@@ -21,7 +21,7 @@ public class TestCreateBooking extends BaseTest {
 
         // Making HTTP request
         response = RestAssured.given(requestSpecification).when()
-                .body(PayloadManager.createPayloadBookingAsString()).post();
+                .body(payloadManager.createPayloadBookingAsString()).post();
 
         // Validating Response
         validatableResponse = response.then().log().all();

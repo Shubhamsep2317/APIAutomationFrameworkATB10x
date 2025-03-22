@@ -11,7 +11,7 @@ import org.testng.annotations.Test;
 public class TestHealthCheck extends BaseTest {
     @Owner("Shubham SDET")
     @Test(groups = "Regression", priority = 2)
-    @Description("TC-1---->>>> Create Auth Token")
+    @Description("TC-1---->>>> Health Check")
     public void test_createAuth() {
 
         // Pre-requisites

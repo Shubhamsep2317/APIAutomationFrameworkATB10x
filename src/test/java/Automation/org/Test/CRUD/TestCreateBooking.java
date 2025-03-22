@@ -12,7 +12,7 @@ import org.testng.annotations.Test;
 public class TestCreateBooking extends BaseTest {
 
     @Owner("Shubham SDET")
-    @Test(groups = "Reg", priority = 1)
+    @Test(groups = "Regression", priority = 1)
     @Description("TC-1---->>>> Create Booking")
     public void test_createBooking() {
 

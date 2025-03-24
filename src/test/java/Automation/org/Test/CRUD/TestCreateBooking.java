@@ -2,7 +2,6 @@ package Automation.org.Test.CRUD;
 
 import Automation.org.Base.BaseTest;
 import Automation.org.Endpoints.APIConstants;
-import Automation.org.Modules.PayloadManager;
 import Automation.org.Pojos.BookingResponse;
 import io.qameta.allure.Description;
 import io.qameta.allure.Owner;

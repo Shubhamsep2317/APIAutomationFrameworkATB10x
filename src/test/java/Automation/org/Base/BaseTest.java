@@ -37,4 +37,17 @@ public class BaseTest {
                 .build().log().all();
 
     }
+
+    public String getToken(){
+
+        requestSpecification.basePath(APIConstants.AUTH_URL);
+        response=RestAssured.given(requestSpecification)
+                .contentType(ContentType.JSON)
+                .body(payloadManager.createAuth()).when().post();
+
+        validatableResponse=response.then().log().all();
+        String token= payloadManager.getTokenResponse(response.asString());
+
+        return token;
+    }
 }

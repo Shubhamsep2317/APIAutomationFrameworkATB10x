@@ -69,12 +69,9 @@ public class TestE2EScenario1 extends BaseTest {
         String token=getToken();
         System.out.println(bookingid);
         requestSpecification.basePath(APIConstants.CREATE_READ_UPDATE_DELETE+"/"+bookingid);
-
         response=RestAssured.given(requestSpecification)
-                .contentType(ContentType.JSON)
                 .cookie("token",token).when()
                 .body(payloadManager.updatePayloadBookingAsString()).put();
-
         validatableResponse=response.then().log().all();
         validatableResponse.statusCode(200);
 
@@ -96,7 +93,6 @@ public class TestE2EScenario1 extends BaseTest {
         requestSpecification.basePath(APIConstants.CREATE_READ_UPDATE_DELETE+"/"+bookingid);
         response=RestAssured.given(requestSpecification)
                 .cookie("token",token)
-                .contentType(ContentType.JSON)
                 .when().delete();
         validatableResponse=response.then().log().all();
         validatableResponse.statusCode(201);

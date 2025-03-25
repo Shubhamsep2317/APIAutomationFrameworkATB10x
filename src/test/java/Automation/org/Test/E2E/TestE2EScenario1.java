@@ -7,7 +7,6 @@ import Automation.org.Pojos.BookingResponse;
 import io.qameta.allure.Description;
 import io.qameta.allure.Owner;
 import io.restassured.RestAssured;
-import io.restassured.http.ContentType;
 import org.testng.ITestContext;
 import org.testng.annotations.Test;
 import static org.assertj.core.api.Assertions.*;
@@ -96,8 +95,6 @@ public class TestE2EScenario1 extends BaseTest {
                 .when().delete();
         validatableResponse=response.then().log().all();
         validatableResponse.statusCode(201);
-
-
     }
 
 }

@@ -8,7 +8,6 @@ import io.qameta.allure.Description;
 import io.qameta.allure.Owner;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
-import org.testng.Assert;
 import org.testng.ITestContext;
 import org.testng.annotations.Test;
 import static org.assertj.core.api.Assertions.*;
@@ -91,8 +90,18 @@ public class TestE2EScenario1 extends BaseTest {
     @Owner("Shubham")
     @Test(groups = "qa",priority = 4)
     public void deleteBooking(ITestContext iTestContext){
-        System.out.println("Booking is deleted");
-        Assert.assertTrue(true);
+        Integer bookingid= (Integer) iTestContext.getAttribute("bookingid");
+        String token= (String) iTestContext.getAttribute("token");
+
+        requestSpecification.basePath(APIConstants.CREATE_READ_UPDATE_DELETE+"/"+bookingid);
+        response=RestAssured.given(requestSpecification)
+                .cookie("token",token)
+                .contentType(ContentType.JSON)
+                .when().delete();
+        validatableResponse=response.then().log().all();
+        validatableResponse.statusCode(201);
+
+
     }
 
 }
